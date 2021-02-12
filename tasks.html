@@ -8,7 +8,7 @@
 
 
 <script>
-1    // Basic Mathematical Operations
+    1    // Basic Mathematical Operations
     // Your task is to create a function that does four basic mathematical operations.
     //
     //     The function should take three arguments - operation(string/char), value1(number), value2(number).
@@ -22,56 +22,74 @@
     // reply
 
     function basicOp(o, a, b) {
-        return eval(a+o+b);
+        return eval(a + o + b);
     }
 
 
-2    // Return the average of the given array rounded down to its nearest integer.
+    2    // Return the average of the given array rounded down to its nearest integer.
 
-    function getAverage(marks){
+    function getAverage(marks) {
         let sum = 0;
-        for ( let i = 0; i < marks.length; i ++){
-            sum +=marks[i]
+        for (let i = 0; i < marks.length; i++) {
+            sum += marks[i]
         }
-        let average = sum/marks.length
+        let average = sum / marks.length
         return Math.floor(average)
     }
-     // BEST
-    function getAverage(marks){
+
+    // BEST
+    function getAverage(marks) {
         return Math.floor(marks.reduce((sum, x) => sum + x) / marks.length);
     }
 
-3   // Write a function called repeat_str which repeats the given string src exactly count times.
+    3   // Write a function called repeat_str which repeats the given string src exactly count times.
 
-    function repeatStr (n, s) {
-    return s.repeat(n);
+    function repeatStr(n, s) {
+        return s.repeat(n);
     }
 
-4    // Reversed Strings
+    4    // Reversed Strings
 
-function solution(str){
-    str.split("").reverse().join("")
-}
-
-function solution(str){
-    let word=""
-    for (let i = str.length-1; i>=0; i--){
-        word+=str[i];
+    function solution(str) {
+        str.split("").reverse().join("")
     }
-    return word;
-}
 
- 5   // A hero is on his way to the castle to complete his mission. However,
-//     he's been told that the castle is surrounded with a couple of powerful dragons! each dragon takes 2 bullets to be defeated, ' +
-// 'our hero has no idea how many bullets he should carry.. Assuming he's gonna grab a specific given number of bullets and move forward
-// to fight another specific given number of dragons, will he survive?
+    function solution(str) {
+        let word = ""
+        for (let i = str.length - 1; i >= 0; i--) {
+            word += str[i];
+        }
+        return word;
+    }
 
- function hero(bullets, dragons){
-    return bullets >= dragons * 2
-}
+    5   // A hero is on his way to the castle to complete his mission. However,
+    //     he's been told that the castle is surrounded with a couple of powerful dragons! each dragon takes 2 bullets to be defeated, ' +
+    // 'our hero has no idea how many bullets he should carry.. Assuming he's gonna grab a specific given number of bullets and move forward
+    // to fight another specific given number of dragons, will he survive?
 
+    function hero(bullets, dragons) {
+        return bullets >= dragons * 2
+    }
 
-
+    6  // If bonus is true, the salary should be multiplied by 10. If bonus is false, the fatcat did not make enough money and must receive only his stated salary.
+       //
+       //     Return the total figure the individual will receive as a string prefixed with "£" (= "\u00A3", JS, Go, Java and Julia), "$" (C#, C++, Ruby, Clojure, Elixir, PHP, Python, Haskell and Lua) or "¥" (Rust).
+    function bonusTime(salary, bonus) {
+        return "£" + salary * (bonus ? 10 : 1)
+    }
+    7. // Wolves have been reintroduced to Great Britain. You are a sheep farmer, and are now plagued by wolves which pretend to be sheep. Fortunately, you are good at spotting them.
+    //
+    //     Warn the sheep in front of the wolf that it is about to be eaten. Remember that you are standing at the front of the queue which is at the end of the array:
+    //
+    //     [sheep, sheep, sheep, sheep, sheep, wolf, sheep, sheep]      (YOU ARE HERE AT THE FRONT OF THE QUEUE)
+    // 7      6      5      4      3            2      1
+    // If the wolf is the closest animal to you, return "Pls go away and stop eating my sheep". Otherwise, return "Oi! Sheep number N! You are about to be eaten by a wolf!" where N is the sheep's position in the queue.
+    //
+    // Note: there will always be exactly one wolf in the array.
+    function warnTheSheep(queue) {
+        const position = queue.reverse().indexOf('wolf');
+        return position === 0 ? 'Pls go away and stop eating my sheep' : `Oi! Sheep number ${ position }! You are about to be eaten by a wolf!`;
+    }
 
 
 </script>
