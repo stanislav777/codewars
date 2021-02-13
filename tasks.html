@@ -91,6 +91,13 @@
         return position === 0 ? 'Pls go away and stop eating my sheep' : `Oi! Sheep number ${ position }! You are about to be eaten by a wolf!`;
     }
 
+    function getAverage(marks){
+        let sum=0
+        for ( let i = 0; i < marks.length; i ++){
+            sum +=marks[i]
+        }
+        return Math.floor(sum/marks.length)
+    }
 
 </script>
 
