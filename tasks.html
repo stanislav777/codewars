@@ -152,16 +152,30 @@
 //         return (max + " " + min);
 //     }
 //best:
-    function highAndLow(numbers){
-        numbers = numbers.split(' ').map(Number);
-        console.log(numbers)
-        return Math.max.apply(0, numbers) + ' ' + Math.min.apply(0, numbers);
+//     function highAndLow(numbers){
+//         numbers = numbers.split(' ').map(Number);
+//         console.log(numbers)
+//         return Math.max.apply(0, numbers) + ' ' + Math.min.apply(0, numbers);
+//     }
+//     console.log(highAndLow("4 5 29 54 4 0 -214 542 -64 1 -3 6 -6"))
+
+
+//     13. Complete the solution so that the function will break up camel casing, using a space between words.
+    solution("camelCasing")  ==  "camel Casing"
+
+    function solution(stringValue) {
+        return stringValue.replace(/([A-Z]+)*([A-Z][a-z])/g, "$1 $2")
     }
+    //
+    // 14. Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
+    //
+    //     For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
+    //
+    // Note: The function accepts an integer and returns an integer
 
-
-    console.log(highAndLow("4 5 29 54 4 0 -214 542 -64 1 -3 6 -6"))
-
-
+    function squareDigits(num){
+        return +(num.toString().split("").map(el => +el * el).join(""));
+    }
 
 
 
