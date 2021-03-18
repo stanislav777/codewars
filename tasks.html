@@ -234,8 +234,8 @@
     // sumDigits(10);  // Returns 1
     // sumDigits(99);  // Returns 18
     // sumDigits(-32); // Returns 5
-    function sumDigits(n)  {
-        return (n - 1) % 9 + 1;
+    function sumDigits(number) {
+        return eval(Math.abs(number).toString().split("").join("+"));
     }
     console.log(sumDigits(-55))
 
